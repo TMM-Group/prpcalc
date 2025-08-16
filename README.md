@@ -1,4 +1,4 @@
-This **PiezoResistive Property Calculator (prpcalc)** computes key parameters of piezoresistive properties and comprises two main modules.
+This **PiezoResistive Property Calculator (PRPCalc)** computes key parameters of piezoresistive properties and comprises two main modules.
 
 **Carrier concentration module**: Based on first-principles density-of-states (DOS) data, it solves for the intrinsic carrier concentration and the corresponding Fermi level.
 
