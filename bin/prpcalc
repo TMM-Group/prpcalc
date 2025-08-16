@@ -1,0 +1,58 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import sys
+from pathlib import Path
+from CalcIntrinsicCarrierConc import get_intrinsic_properties_fd
+from gen_strained_structures import generate_strained_structures
+from CalcPiezoresistivity import calculate_piezoresistivity 
+def main():
+        print_introduction()
+        Manual().print_first_level_menu()
+        choice = input()
+        if choice == '0':
+            sys.exit(0)
+        elif choice == '1':
+            get_intrinsic_properties_fd()
+        elif choice == '2':
+            generate_strained_structures()
+        elif choice == '3':
+            calculate_piezoresistivity()
+        else:
+            print('Invalid input, please input again.\n')
+        
+        sys.exit(0)
+
+def print_introduction():
+    print("-"*60)
+    for i in range(5):
+        if i == 1:
+            print('|',' '*10,'PiezoResistive Property Calculator', ' '*10,'|')
+        elif i == 2:
+            print('|',' '*14, 'Version 1.0.0 (2025-07-18)', ' '*14, '|')
+        elif i == 3:
+            print('|',' '*12, 'Bug report: gtang@bit.edu.cn ', ' '*13,'|')
+        else:
+            print('|', ' '*56, '|')
+    print("-"*60)
+
+class Manual:
+    def __init__(self):
+        pass
+
+    def print_first_level_menu(self):
+        print('='*13,'Intrinsic Carrier Concentration','='*12)
+        print("1) Calculate the intrinsic carrier concentration")
+        print()
+        print('='*17,'Piezoresistive Effect','='*18)
+        print("2) Generate strained structures")
+        print("3) Calculate the piezoresistivity: ")
+        print("   - Elastoresistance Coeff (m)")
+        print("   - Piezoresistive Coeff (π)")
+        print("   - Gauge Factor (GF)")
+        print()
+        print("0) Exit")
+        print()
+        print("Please input your choice:")
+
+if __name__ == '__main__':
+    main()
